@@ -52,8 +52,8 @@ function getCurrentTime() {
 setInterval(getCurrentTime, 1000);
 
 // Weather functionality
-https: navigator.geolocation.getCurrentPosition((position) => {
-  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=5e032d00e07d7d338077469566016c8a`;
+navigator.geolocation.getCurrentPosition((position) => {
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial&appid=5e032d00e07d7d338077469566016c8a`;
   fetch(weatherURL)
     .then((res) => {
       if (!res.ok) {
